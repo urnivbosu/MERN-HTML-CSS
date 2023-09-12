@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Style the container */
+.container {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  background-color: #f0eded;
+  overflow: hidden;
+  top: 100px;
+  left: 20%;
+  border: 1px solid #0b0b0b;
+
+}
+
+/* Style the buttons */
+.buttons {
+  position: absolute;
+  top: 0;
+  left: -60px; /* Initial position, off-screen */
+  width: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5; /* Initial opacity */
+  transition: left 0.3s, opacity 0.3s; /* Transition effect for left and opacity */
+}
+
+/* Change position and opacity on hover to make the buttons fully visible */
+.container:hover .buttons {
+  left: 0;
+  opacity: 1;
+}
+
+/* Button colors */
+.button {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.green-button { background-color: green; }
+.blue-button { background-color: blue; }
+.red-button { background-color: red; }
+.gray-button { background-color: gray; }
+
+/* Button text styles */
+.button-text {
+  display: none; /* Initially hidden */
+  color: white;
+  font-size: 14px;
+}
+
+/* Show button text on hover */
+.button:hover .button-text {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="buttons">
+    <div class="button green-button">
+      <div class="button-text"></div>
+    </div>
+    <div class="button blue-button">
+      <div class="button-text"></div>
+    </div>
+    <div class="button red-button">
+      <div class="button-text"></div>
+    </div>
+    <div class="button gray-button">
+      <div class="button-text"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

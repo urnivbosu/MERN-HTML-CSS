@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* General styles */
+body {
+  margin: 10px;
+  padding: 0;
+  background-color: yellow;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: left;
+  align-items: top;
+  min-height: 100vh; /* Center vertically */
+  color: brown;
+
+}
+
+/* Container for the entire content */
+.container {
+  display: flex;
+}
+
+/* Navigation menu styles */
+.navigation {
+  width: 100px;
+  background-color: yellow;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  color: rgb(76, 7, 7);
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  background-color: rgb(15, 14, 14);
+  transform: skewX(0deg);
+}
+
+/* Page content styles */
+.content {
+  margin-left: 120px;
+  padding: 20px;
+  background-color: white;
+  display: none; /* Initially hidden */
+}
+
+/* Page-specific styles */
+.home { background-color: yellow; }
+.musings { background-color: yellow }
+.my-town { background-color: yellow; }
+.links { background-color: yellow; }
+
+</style>
+</head>
+<body>
+
+<!-- Container for centering -->
+<div class="container">
+  <!-- Navigation menu -->
+  <div class="navigation">
+    <a href="#" class="button" onclick="showContent('home')">Home</a>
+    <a href="#" class="button" onclick="showContent('musings')">Musings</a>
+    <a href="#" class="button" onclick="showContent('my-town')">My Town</a>
+    <a href="#" class="button" onclick="showContent('links')">Links</a>
+  </div>
+
+  <!-- Page content -->
+  <div class="content home">
+    <h1>Welcome to the Home Page</h1>
+    <p>This is the content of the Home Page.</p>
+  </div>
+  <div class="content musings">
+    <h1>Musings</h1>
+    <p>This is the content of the Musings Page.</p>
+  </div>
+  <div class="content my-town">
+    <h1>My Town</h1>
+    <p>This is the content of the My Town Page.</p>
+  </div>
+  <div class="content links">
+    <h1>Links</h1>
+    <p>This is the content of the Links Page.</p>
+  </div>
+</div>
+
+<script>
+var currentPage = 'home'; // Initialize current page
+
+function showContent(page) {
+  // Hide the current content
+  var currentContent = document.querySelector('.' + currentPage);
+  if (currentContent) {
+    currentContent.style.display = 'none';
+  }
+
+  // Show the selected content
+  var selectedContent = document.querySelector('.' + page);
+  if (selectedContent) {
+    selectedContent.style.display = 'block';
+    currentPage = page; // Update current page
+  }
+}
+</script>
+
+</body>
+</html>
