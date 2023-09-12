@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-/* Style the container */
+
 .container {
   position: relative;
   width: 500px;
@@ -15,28 +15,28 @@
 
 }
 
-/* Style the buttons */
+
 .buttons {
   position: absolute;
   top: 0;
-  left: -60px; /* Initial position, off-screen */
+  left: -60px; 
   width: 60px;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0.5; /* Initial opacity */
-  transition: left 0.3s, opacity 0.3s; /* Transition effect for left and opacity */
+  opacity: 0.5; 
+  transition: left 0.3s, opacity 0.3s; 
 }
 
-/* Change position and opacity on hover to make the buttons fully visible */
+
 .container:hover .buttons {
   left: 0;
   opacity: 1;
 }
 
-/* Button colors */
+
 .button {
   width: 100px;
   height: 40px;
@@ -50,14 +50,14 @@
 .red-button { background-color: red; }
 .gray-button { background-color: gray; }
 
-/* Button text styles */
+
 .button-text {
-  display: none; /* Initially hidden */
+  display: none; 
   color: white;
   font-size: 14px;
 }
 
-/* Show button text on hover */
+
 .button:hover .button-text {
   display: block;
 }
